@@ -17,7 +17,6 @@ public class MenuController {
 	
 	@RequestMapping(value="/views/menuadd", method = RequestMethod.GET)
 	public String menuAdd(Map<String,Object> model){
-		System.out.println("=======================================================================> menuADD");
 		return "views/menu/menu_add";
 	}
 }

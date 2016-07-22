@@ -1,4 +1,6 @@
 <%@include file="icon_modal.jsp" %>
+<%@include file="parent_menu_modal.jsp" %>
+
 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
@@ -48,9 +50,10 @@
 	        <div class="form-group">
 	            <label for="projectName">Parent Menu</label>
 	            <div class="input-group">
-	            	<input type="text" class="form-control" required="true" ng-model="menu.parentId" aria-required="true">
+	            	<input id="parentName" type="text" class="form-control" required="true" ng-model="menu.parentId" aria-required="true" onfocus="showPicklistMenu();">
+	            	<input id="parentId" type="hidden" ng-model="menu.parentId"/>
 	            	<span class="input-group-btn">
-						<button type="button" class="btn btn-info btn-flat">
+						<button type="button" class="btn btn-info btn-flat" onclick="showPicklistMenu();">
 									<i class="glyphicon glyphicon-search"></i>
 						</button>
 					</span>
@@ -76,5 +79,9 @@
 <script>
 function showIconModal(){
 	$("#iconModal").modal("show");
+}
+
+function showPicklistMenu(){
+	$("#menuPickModal").modal("show");
 }
 </script>
