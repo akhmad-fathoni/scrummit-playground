@@ -6,7 +6,7 @@
                 <a ui-sref="index.dashboard">Home</a>
             </li>
 			<li class="active">
-                <strong>Menu Management</strong>
+                <strong>Menu</strong>
             </li>
         </ol>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
             	<div>
-                    <button class="btn btn-primary" ui-sref="index.addmember">Add New Menu</button>
+                    <button class="btn btn-primary" ui-sref="index.addmenu">Add New Menu</button>
                 </div>
                 <div class="tableContainer" ng-controller="TreeTableController">
     				<script type="text/ng-template" id="tree_node">

@@ -824,16 +824,16 @@ function NotifModalController($scope, $uibModalInstance, message) {
 
 
 function MenuController($scope, $location, $http, MenuService) {
-	MenuService.testAja('').then(function(data){
+	/*MenuService.testAja('').then(function(data){
         $scope.usre = data;
-    });
+    });*/
 	
 	/*MenuService.retrieve1stLevelMenu().then(function(data){
 		$scope.zmenus = data;
 	});*/
 	
 	
-	
+	$scope.topmenu = "Add Menu";
 }
 
 function TreeTableController($scope, $q, $http, ngTreetableParams, MenuService){

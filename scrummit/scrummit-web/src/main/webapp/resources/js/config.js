@@ -76,6 +76,13 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpPr
                 }
             }
         })
+        .state('index.addmenu', {
+            url: "/menu",
+        	templateUrl: "views/menuadd",
+        	controller: "MenuController",
+            controllerAs: "vm",
+        	data: { pageTitle: 'Add Menu' }
+        })
         .state('login', {
         	controller: "LoginController",
         	url: "/login",
