@@ -23,16 +23,12 @@
 									<span ng-if="node.children.length > 0" class="folder" ng-bind="node.menuname" onclick="pilihParent(this);"></span>
 									<span ng-if="!node.children || node.children.length < 1" class="file" ng-bind="node.menuname" onclick="pilihParent(this);"></span>
 								</td>
-            					<td ng-bind="node.id" class="pointer" onclick="pilihParent(this);"></td>
-            					<td ng-bind="node.parentId" class="pointer" onclick="pilihParent(this);"></td>
         					</tr>
     					</script>
 					    <table tt-table tt-params="expanded_params">
 					        <thead>
 					        <tr>
 					            <th>Menu Name</th>
-					            <th>menu id</th>
-					            <th>parent</th>
 					        </tr>
 					        </thead>
 					        <tbody></tbody>
@@ -53,10 +49,14 @@
 function pilihParent(ini){
 	var idx = $(ini).closest("tr").find("input.id").html();
 	var menuname = $(ini).closest("tr").find("input.menuname").html();
-	$("#parentId").val(idx);
+	
+	var scope = angular.element($("#menuIcon")).scope();
+    scope.$apply(function(){
+        scope.menu.parentId = idx;
+    });
+    
 	$("#parentName").val(menuname);
 	$("#menuPickModal").modal("hide");
-	
 }
 
 </script>

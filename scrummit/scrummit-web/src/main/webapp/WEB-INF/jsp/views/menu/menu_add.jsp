@@ -22,23 +22,23 @@
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <form class="m-t" role="form" ng-submit="saveProject()">
+    <form class="m-t" role="form" ng-submit="saveMenu()">
     	<div class="col-md-6">
     		<div class="form-group">
-	            <label for="projectName">Menu Name</label>
-	            <input type="text" class="form-control" required="true" ng-model="menu.menuname" aria-required="true">
+	            <label for="menuName">Menu Name</label>
+	            <input id="menuName" type="text" class="form-control" required="true" ng-model="menu.menuname" aria-required="true">
 	        </div>
 	        <div class="form-group">
-	            <label for="projectName">Link/Path/href</label>
-	            <input type="text" class="form-control" required="true" ng-model="menu.href" aria-required="true">
+	            <label for="menuHref">Link/Path/href</label>
+	            <input id="menuHref" type="text" class="form-control" required="true" ng-model="menu.href" aria-required="true">
 	        </div>
     	</div>
     	
     	<div class="col-md-6">
     		<div class="form-group">
-	            <label for="projectName">Menu Icon</label>
+	            <label for="menuIcon">Menu Icon</label>
 	            <div class="input-group">
-		            <input id="menuIcon" type="text" class="form-control" required="true" ng-model="menu.cssClass" aria-required="true" onfocus="showIconModal();">
+		            <input id="menuIcon" type="text" class="form-control" required="true" ng-model="menu.cssclass" aria-required="true" onfocus="showIconModal();">
 		            <span class="input-group-btn">
 						<button type="button" class="btn btn-info btn-flat" onclick="showIconModal();">
 									<i class="glyphicon glyphicon-search"></i>
@@ -48,9 +48,9 @@
 	        </div>
 	        
 	        <div class="form-group">
-	            <label for="projectName">Parent Menu</label>
+	            <label for="parentName">Parent Menu</label>
 	            <div class="input-group">
-	            	<input id="parentName" type="text" class="form-control" required="true" ng-model="menu.parentId" aria-required="true" onfocus="showPicklistMenu();">
+	            	<input id="parentName" type="text" class="form-control" onfocus="showPicklistMenu();">
 	            	<input id="parentId" type="hidden" ng-model="menu.parentId"/>
 	            	<span class="input-group-btn">
 						<button type="button" class="btn btn-info btn-flat" onclick="showPicklistMenu();">
@@ -64,7 +64,7 @@
         
             <div class="form-group" style="padding-left:15px;">
 				<button ui-sref="index.menu" class="btn btn-default">Cancel</button>
-                <button class="btn btn-primary">Save</button>
+                <button id="btnSaveMenu" class="btn btn-primary">Save</button>
             </div>
         
         <div
@@ -80,7 +80,6 @@
 function showIconModal(){
 	$("#iconModal").modal("show");
 }
-
 function showPicklistMenu(){
 	$("#menuPickModal").modal("show");
 }

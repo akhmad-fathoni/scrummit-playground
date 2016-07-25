@@ -731,7 +731,11 @@
 		
 <script type="text/javascript">
 	function pickOneIcon(iconStr){
-		$("#menuIcon").val(iconStr);
+		var scope = angular.element($("#menuIcon")).scope();
+	    scope.$apply(function(){
+	        scope.menu.cssclass = iconStr;
+	    });
+	    
 		$("#iconModal").modal("hide");
 	}
 	$("a[data-toggle='collapse']").click(function(){

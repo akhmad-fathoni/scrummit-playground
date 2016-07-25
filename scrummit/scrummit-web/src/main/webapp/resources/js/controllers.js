@@ -823,17 +823,30 @@ function NotifModalController($scope, $uibModalInstance, message) {
 
 
 
-function MenuController($scope, $location, $http, MenuService) {
-	/*MenuService.testAja('').then(function(data){
-        $scope.usre = data;
-    });*/
+function MenuController($scope, $location, $http, $state, MenuService) {
+	 
 	
-	/*MenuService.retrieve1stLevelMenu().then(function(data){
-		$scope.zmenus = data;
-	});*/
-	
+	$scope.saveMenu = function () {
+		if($scope.menu.id != null) {
+			console.log("update not available yet");
+		}
+		else {
+			saveMenu();
+			$state.go('index.menu');
+		}
+	};
 	
 	$scope.topmenu = "Add Menu";
+	
+	function saveMenu() {
+		MenuService.saveMenu($scope.menu, function (response) {
+			console.log("Save Menu Success");
+		}, function (err) {
+			console.log("Error when saving menu");
+		});
+	};
+	
+	
 }
 
 function TreeTableController($scope, $q, $http, ngTreetableParams, MenuService){

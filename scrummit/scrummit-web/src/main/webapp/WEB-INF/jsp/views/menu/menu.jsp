@@ -30,14 +30,28 @@
 							</td>
             				<td ng-bind="node.id"></td>
             				<td ng-bind="node.parentId"></td>
+							<td style="width:150px;" class="text-center">
+								<ul style="font-size: 14px;">
+									<li class="btn pull-left label label-info" title="View">
+										<i class="glyphicon glyphicon-eye-open"></i>
+									</li> 
+									<li class="btn pull-left label label-default" title="Edit">
+										<i class="glyphicon glyphicon-pencil"></i>
+									</li> 
+									<li class="btn pull-left label label-danger" title="Delete" >
+										<i class="glyphicon glyphicon-trash"></i>
+									</li>
+								</ul>
+							</td>
         				</tr>
     				</script>
 				    <table tt-table tt-params="expanded_params">
 				        <thead>
 				        <tr>
 				            <th>Menu Name</th>
-				            <th>menu id</th>
-				            <th>parent</th>
+				            <th>Menu Id</th>
+				            <th>Parent Id</th>
+				            <th class="text-center">Task</th>
 				        </tr>
 				        </thead>
 				        <tbody></tbody>

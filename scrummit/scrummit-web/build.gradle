@@ -40,7 +40,7 @@ gretty {
   contextPath = 'scrummit'
   servletContainer = 'tomcat8' //tomcat7 or tomcat8
   
-  //loggingLevel = 'ERROR'
+  loggingLevel = 'ERROR'
   //managedClassReload = true
 }
 
