@@ -401,22 +401,10 @@ var zserverPath="https://localhost:12001/";
 
 function MenuService($http, $q){
 	 var service = {};
-	 service.testAja = testAja;
 	 service.retrieve1stLevelMenu = retrieve1stLevelMenu;
+	 service.saveMenu = saveMenu;
 	 
 	 return service;
-	 function testAja(id){
-	        var deferred = $q.defer();
-	        $http.get('https://localhost:12001/tesOneUser')
-	        .success(function(data){
-	            deferred.resolve(data);
-	        })
-	        .error(function(data){
-	            console.log("error");
-	            deferred.resolve(data);
-	        });
-	        return deferred.promise;
-	    }
 	 
 	 function retrieve1stLevelMenu(){
 		 var deferred = $q.defer();
@@ -430,6 +418,38 @@ function MenuService($http, $q){
 		 });
 		 return deferred.promise;
 	 }
+	 
+	 function saveMenu(mnu){
+	        var deferred = $q.defer();
+
+	        if (mnu.id !== undefined){
+	            $http.put(zserverPath+"MasterMenu/update", mnu)
+	            .success(function(response){
+	                response.success = true;
+	                response.message = "Menu updated!";
+	                deferred.resolve(response);
+	            })
+	            .error(function(response){
+	                response.success = false;
+	                response.message = 'There was an error when updating Menu, please try again!';
+	                deferred.resolve(response);
+	            });
+	        }else{
+	            $http.post(zserverPath+"MasterMenu/save", mnu)
+	            .success(function(response){
+	                response.success = true;
+	                response.message = "Menu created!";
+	                deferred.resolve(response);
+	            })
+	            .error(function(response){
+	                response.success = false;
+	                response.message = 'There was an error when saving Menu, please try again!';
+	                deferred.resolve(response);
+	            });
+	        }
+
+	        return deferred.promise;
+	    }
 }
 
 angular

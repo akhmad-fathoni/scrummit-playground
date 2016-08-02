@@ -39,6 +39,9 @@ gretty {
   port = 8080
   contextPath = 'scrummit'
   servletContainer = 'tomcat8' //tomcat7 or tomcat8
+  
+  loggingLevel = 'ERROR'
+  //managedClassReload = true
 }
 
 //For Eclipse IDE only

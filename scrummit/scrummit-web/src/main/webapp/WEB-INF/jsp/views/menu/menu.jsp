@@ -6,7 +6,7 @@
                 <a ui-sref="index.dashboard">Home</a>
             </li>
 			<li class="active">
-                <strong>Menu Management</strong>
+                <strong>Menu</strong>
             </li>
         </ol>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
             	<div>
-                    <button class="btn btn-primary" ui-sref="index.addmember">Add New Menu</button>
+                    <button class="btn btn-primary" ui-sref="index.addmenu">Add New Menu</button>
                 </div>
                 <div class="tableContainer" ng-controller="TreeTableController">
     				<script type="text/ng-template" id="tree_node">
@@ -30,14 +30,28 @@
 							</td>
             				<td ng-bind="node.id"></td>
             				<td ng-bind="node.parentId"></td>
+							<td style="width:150px;" class="text-center">
+								<ul style="font-size: 14px;">
+									<li class="btn pull-left label label-info" title="View">
+										<i class="glyphicon glyphicon-eye-open"></i>
+									</li> 
+									<li class="btn pull-left label label-default" title="Edit">
+										<i class="glyphicon glyphicon-pencil"></i>
+									</li> 
+									<li class="btn pull-left label label-danger" title="Delete" >
+										<i class="glyphicon glyphicon-trash"></i>
+									</li>
+								</ul>
+							</td>
         				</tr>
     				</script>
 				    <table tt-table tt-params="expanded_params">
 				        <thead>
 				        <tr>
 				            <th>Menu Name</th>
-				            <th>menu id</th>
-				            <th>parent</th>
+				            <th>Menu Id</th>
+				            <th>Parent Id</th>
+				            <th class="text-center">Task</th>
 				        </tr>
 				        </thead>
 				        <tbody></tbody>

@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MenuController {
 
 	@RequestMapping(value = "/views/menufirst", method = RequestMethod.GET)
-	public String projectViews(Map<String, Object> model) {
+	public String menuFirstViews(Map<String, Object> model) {
 		
-		return "views/menu";
+		return "views/menu/menu";
+	}
+	
+	@RequestMapping(value="/views/menuadd", method = RequestMethod.GET)
+	public String menuAdd(Map<String,Object> model){
+		return "views/menu/menu_add";
 	}
 }
